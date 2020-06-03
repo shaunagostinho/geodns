@@ -1,6 +1,7 @@
 package zones
 
 import (
+	"github.com/shaunagostinho/geodns/applog"
 	"math/rand"
 
 	"github.com/shaunagostinho/geodns/targeting/geo"
@@ -64,8 +65,11 @@ func (zone *Zone) Picker(label *Label, qtype uint16, max int, location *geo.Loca
 		for i, s := range servers {
 			if servers[i].Test == nil || servers[i].Test.IsHealthy() {
 				tmpServers = append(tmpServers, s)
+				applog.Printf("1Record: %s Healthy: %v", s.Test.TestName, s.Test.IsHealthy())
 				sum += s.Weight
 			}
+
+			applog.Printf("2Record: %s Healthy: %v", servers[i].Test.TestName, servers[i].Test.IsHealthy())
 		}
 
 		if sum == 0 {
