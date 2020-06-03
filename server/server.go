@@ -3,9 +3,9 @@ package server
 import (
 	"log"
 
-	"github.com/abh/geodns/monitor"
-	"github.com/abh/geodns/querylog"
-	"github.com/abh/geodns/zones"
+	"github.com/shaunagostinho/geodns/monitor"
+	"github.com/shaunagostinho/geodns/querylog"
+	"github.com/shaunagostinho/geodns/zones"
 
 	"github.com/miekg/dns"
 	"github.com/prometheus/client_golang/prometheus"

@@ -7,7 +7,7 @@ and other similar services.
 ## Questions or suggestions?
 
 For bug reports or feature requests, please create [an
-issue](https://github.com/abh/geodns/issues). For questions or
+issue](https://github.com/shaunagostinho/geodns/issues). For questions or
 discussion, you can post to the [GeoDNS
 category](https://community.ntppool.org/c/geodns) on the NTP Pool
 forum.
@@ -121,7 +121,7 @@ most frequently requested labels per zone, etc) at `/status`.
 ## StatHat integration
 
 GeoDNS can post runtime data to [StatHat](http://www.stathat.com/).
-([Documentation](https://github.com/abh/geodns/wiki/StatHat))
+([Documentation](https://github.com/shaunagostinho/geodns/wiki/StatHat))
 
 ## Country and continent lookups
 

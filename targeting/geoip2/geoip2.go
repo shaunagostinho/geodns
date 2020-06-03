@@ -9,9 +9,9 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/abh/geodns/countries"
-	"github.com/abh/geodns/targeting/geo"
 	geoip2 "github.com/oschwald/geoip2-golang"
+	"github.com/shaunagostinho/geodns/countries"
+	"github.com/shaunagostinho/geodns/targeting/geo"
 )
 
 type geoType uint8

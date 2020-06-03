@@ -4,8 +4,8 @@ import (
 	"math/rand"
 	"testing"
 
-	"github.com/abh/geodns/health"
 	"github.com/miekg/dns"
+	"github.com/shaunagostinho/geodns/health"
 )
 
 type HealthStatus struct {

@@ -6,9 +6,9 @@ import (
 	"strings"
 	"time"
 
-	"github.com/abh/geodns/querylog"
 	"github.com/miekg/dns"
 	"github.com/prometheus/client_golang/prometheus"
+	"github.com/shaunagostinho/geodns/querylog"
 )
 
 type statsEntry struct {

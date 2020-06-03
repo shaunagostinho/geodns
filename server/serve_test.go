@@ -10,9 +10,9 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/abh/geodns/monitor"
-	"github.com/abh/geodns/zones"
 	"github.com/miekg/dns"
+	"github.com/shaunagostinho/geodns/monitor"
+	"github.com/shaunagostinho/geodns/zones"
 )
 
 const (

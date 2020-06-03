@@ -29,15 +29,15 @@ import (
 	"strings"
 	"time"
 
-	"github.com/abh/geodns/applog"
-	"github.com/abh/geodns/health"
-	"github.com/abh/geodns/monitor"
-	"github.com/abh/geodns/querylog"
-	"github.com/abh/geodns/server"
-	"github.com/abh/geodns/targeting"
-	"github.com/abh/geodns/targeting/geoip2"
-	"github.com/abh/geodns/zones"
 	"github.com/pborman/uuid"
+	"github.com/shaunagostinho/geodns/applog"
+	"github.com/shaunagostinho/geodns/health"
+	"github.com/shaunagostinho/geodns/monitor"
+	"github.com/shaunagostinho/geodns/querylog"
+	"github.com/shaunagostinho/geodns/server"
+	"github.com/shaunagostinho/geodns/targeting"
+	"github.com/shaunagostinho/geodns/targeting/geoip2"
+	"github.com/shaunagostinho/geodns/zones"
 )
 
 // VERSION is the current version of GeoDNS

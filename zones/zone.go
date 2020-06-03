@@ -3,7 +3,7 @@ package zones
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/abh/geodns/typeutil"
+	"github.com/shaunagostinho/geodns/typeutil"
 	"log"
 	"net"
 	"strconv"
@@ -11,10 +11,10 @@ import (
 	"sync"
 	"time"
 
-	"github.com/abh/geodns/applog"
-	"github.com/abh/geodns/health"
-	"github.com/abh/geodns/targeting"
-	"github.com/abh/geodns/targeting/geo"
+	"github.com/shaunagostinho/geodns/applog"
+	"github.com/shaunagostinho/geodns/health"
+	"github.com/shaunagostinho/geodns/targeting"
+	"github.com/shaunagostinho/geodns/targeting/geo"
 
 	"github.com/miekg/dns"
 )

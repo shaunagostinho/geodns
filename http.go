@@ -7,9 +7,9 @@ import (
 	"net/http"
 	"strconv"
 
-	"github.com/abh/geodns/monitor"
-	"github.com/abh/geodns/zones"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
+	"github.com/shaunagostinho/geodns/monitor"
+	"github.com/shaunagostinho/geodns/zones"
 )
 
 type httpServer struct {

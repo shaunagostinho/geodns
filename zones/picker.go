@@ -3,8 +3,8 @@ package zones
 import (
 	"math/rand"
 
-	"github.com/abh/geodns/health"
-	"github.com/abh/geodns/targeting/geo"
+	"github.com/shaunagostinho/geodns/health"
+	"github.com/shaunagostinho/geodns/targeting/geo"
 
 	"github.com/miekg/dns"
 )

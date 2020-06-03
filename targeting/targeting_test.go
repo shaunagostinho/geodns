@@ -5,7 +5,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/abh/geodns/targeting/geoip2"
+	"github.com/shaunagostinho/geodns/targeting/geoip2"
 )
 
 func TestTargetString(t *testing.T) {

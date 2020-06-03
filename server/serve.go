@@ -10,10 +10,10 @@ import (
 	"strings"
 	"time"
 
-	"github.com/abh/geodns/applog"
-	"github.com/abh/geodns/edns"
-	"github.com/abh/geodns/querylog"
-	"github.com/abh/geodns/zones"
+	"github.com/shaunagostinho/geodns/applog"
+	"github.com/shaunagostinho/geodns/edns"
+	"github.com/shaunagostinho/geodns/querylog"
+	"github.com/shaunagostinho/geodns/zones"
 
 	"github.com/miekg/dns"
 	"github.com/prometheus/client_golang/prometheus"

@@ -7,8 +7,8 @@ import (
 	"os"
 	"testing"
 
-	"github.com/abh/geodns/targeting"
-	"github.com/abh/geodns/targeting/geoip2"
+	"github.com/shaunagostinho/geodns/targeting"
+	"github.com/shaunagostinho/geodns/targeting/geoip2"
 	"github.com/stretchr/testify/assert"
 )
 

@@ -15,8 +15,8 @@ import (
 	"github.com/prometheus/client_golang/prometheus"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
 
-	"github.com/abh/geodns/countries"
-	"github.com/abh/geodns/querylog"
+	"github.com/shaunagostinho/geodns/countries"
+	"github.com/shaunagostinho/geodns/querylog"
 )
 
 // TODO:
