@@ -23,20 +23,6 @@ func init() {
 	}
 }
 
-func (zone *Zone) filterHealth(servers Records) (Records, int) {
-	// Remove any unhealthy servers
-	tmpServers := servers[:0]
-
-	sum := 0
-	for i, s := range servers {
-		if servers[i].Test == nil || servers[i].Test.IsHealthy() {
-			tmpServers = append(tmpServers, s)
-			sum += s.Weight
-		}
-	}
-	return tmpServers, sum
-}
-
 // Picker picks the best results from a label matching the qtype,
 // up to 'max' results. If location is specified Picker will get
 // return the "closests" results, otherwise they are returned weighted
@@ -72,13 +58,23 @@ func (zone *Zone) Picker(label *Label, qtype uint16, max int, location *geo.Loca
 	copy(servers, labelRR)
 
 	if label.Test != nil {
-		servers, sum = zone.filterHealth(servers)
-		// sum re-check to mirror the label.Weight[] check below
+		// Remove any unhealthy servers
+		tmpServers := servers[:0]
+		sum = 0
+		for i, s := range servers {
+			if servers[i].Test == nil || servers[i].Test.IsHealthy() {
+				tmpServers = append(tmpServers, s)
+				sum += s.Weight
+			}
+		}
+
 		if sum == 0 {
 			// todo: this is wrong for cname since it misses
 			// the 'max_hosts' setting
 			return servers
 		}
+
+		servers = tmpServers
 	}
 
 	// not "balanced", just return all -- It's been working
