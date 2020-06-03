@@ -2,7 +2,7 @@ FROM golang:1.13.5-alpine3.10 as build
 
 RUN apk add --no-cache git tar
 
-WORKDIR /go/src/github.com/abh/geodns
+WORKDIR /go/src/github.com/shaunagostinho/geodns
 
 ENV CGO_ENABLED=0
 

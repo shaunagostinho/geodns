@@ -46,8 +46,8 @@ func TestHealth(t *testing.T) {
 
 	tz := muxm.zonelist["hc.example.com"]
 	tz.HealthStatus = hs
-	// t.Logf("hs: '%+v'", tz.HealthStatus)
-	// t.Logf("hc zone: '%+v'", tz)
+	t.Logf("hs: '%+v'", tz.HealthStatus)
+	t.Logf("hc zone: '%+v'", tz)
 
 	matches := tz.FindLabels("tucs", []string{"@"}, []uint16{dns.TypeA})
 	// t.Logf("qt: %d, label: '%+v'", qt, label)
@@ -56,7 +56,7 @@ func TestHealth(t *testing.T) {
 		t.Errorf("got %d records when expecting 0", len(records))
 	}
 
-	// t.Logf("label.Test: '%+v'", label.Test)
+	//t.Logf("label.Test: '%+v'", matches[0].Label.Test)
 
 	if len(records) == 0 {
 		t.Log("didn't get any records")

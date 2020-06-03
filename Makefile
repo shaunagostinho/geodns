@@ -11,7 +11,7 @@ testrace: .PHONY
 
 docker-test: .PHONY
 	# test that we don't have missing dependencies
-	docker run --rm -v `pwd`:/go/src/github.com/abh/geodns \
+	docker run --rm -v `pwd`:/go/src/github.com/shaunagostinho/geodns \
 		-v /opt/local/share/GeoIP:/opt/local/share/GeoIP \
 		golang:1.13.5-alpine3.10 \
 		go test ./...

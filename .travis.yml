@@ -1,6 +1,6 @@
 dist: bionic
 language: go
-go_import_path: github.com/abh/geodns
+go_import_path: github.com/shaunagostinho/geodns
 
 go:
   - "1.12.3"

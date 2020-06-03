@@ -24,8 +24,8 @@ download Go from https://golang.org/dl/ and untar'ing it in
 ```sh
 export PATH=$PATH:/usr/local/go/bin
 export GOPATH=~/go
-go get github.com/abh/geodns
-cd ~/go/src/github.com/abh/geodns
+go get github.com/shaunagostinho/geodns
+cd ~/go/src/github.com/shaunagostinho/geodns
 go test
 go build
 ./geodns -h

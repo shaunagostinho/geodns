@@ -1,4 +1,4 @@
-module github.com/abh/geodns
+module github.com/shaunagostinho/geodns
 
 go 1.13
 
@@ -14,7 +14,6 @@ require (
 	github.com/oschwald/geoip2-golang v1.4.0
 	github.com/pborman/uuid v1.2.0
 	github.com/prometheus/client_golang v1.3.0
-	github.com/shaunagostinho/geodns v3.0.2+incompatible
 	github.com/stretchr/testify v1.4.1-0.20191223143401-858f37ff9bc4
 	golang.org/x/crypto v0.0.0-20191227163750-53104e6ec876 // indirect
 	golang.org/x/net v0.0.0-20191209160850-c0dbc17a3553 // indirect
