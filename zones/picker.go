@@ -3,7 +3,6 @@ package zones
 import (
 	"math/rand"
 
-	"github.com/shaunagostinho/geodns/health"
 	"github.com/shaunagostinho/geodns/targeting/geo"
 
 	"github.com/miekg/dns"
@@ -30,7 +29,7 @@ func (zone *Zone) filterHealth(servers Records) (Records, int) {
 
 	sum := 0
 	for i, s := range servers {
-		if servers[i].Test == nil || health.GetStatus(servers[i].Test.TestName) == health.StatusHealthy {
+		if servers[i].Test == nil || servers[i].Test.IsHealthy() {
 			tmpServers = append(tmpServers, s)
 			sum += s.Weight
 		}
