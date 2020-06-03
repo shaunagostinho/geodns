@@ -161,7 +161,10 @@ func (mm *MuxManager) reload() error {
 func (mm *MuxManager) addHandler(name string, zone *Zone) {
 	oldZone := mm.zonelist[name]
 	zone.SetupMetrics(oldZone)
-	zone.setupHealthTests()
+	if oldZone != nil {
+		oldZone.StartStopHealthTests(false, nil)
+	}
+	zone.StartStopHealthTests(true, oldZone)
 	mm.zonelist[name] = zone
 	mm.reg.Add(name, zone)
 }

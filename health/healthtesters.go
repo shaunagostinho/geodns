@@ -1,4 +1,4 @@
-package healthtest
+package health
 
 import (
 	"crypto/sha256"
@@ -62,7 +62,7 @@ type TcpHealthTester struct {
 }
 
 func (t *TcpHealthTester) Test(ht *HealthTest) bool {
-	if conn, err := net.DialTimeout("tcp", net.JoinHostPort(ht.ipAddress.String(), strconv.Itoa(t.port)), ht.timeout); err != nil {
+	if conn, err := net.DialTimeout("tcp", net.JoinHostPort(ht.IpAddress.String(), strconv.Itoa(t.port)), ht.timeout); err != nil {
 		return false
 	} else {
 		conn.Close()
@@ -92,7 +92,7 @@ type NtpHealthTester struct {
 }
 
 func (t *NtpHealthTester) Test(ht *HealthTest) bool {
-	udpAddress, err := net.ResolveUDPAddr("udp", net.JoinHostPort(ht.ipAddress.String(), "123"))
+	udpAddress, err := net.ResolveUDPAddr("udp", net.JoinHostPort(ht.IpAddress.String(), "123"))
 	if err != nil {
 		return false
 	}
@@ -152,7 +152,7 @@ type ExecHealthTester struct {
 }
 
 func (t *ExecHealthTester) Test(ht *HealthTest) bool {
-	commandSlice := strings.Split(strings.Replace(t.cmd, "{}", ht.ipAddress.String(), -1), " ")
+	commandSlice := strings.Split(strings.Replace(t.cmd, "{}", ht.IpAddress.String(), -1), " ")
 	cmd := exec.Command(commandSlice[0], commandSlice[1:]...)
 	return cmd.Run() == nil
 }
@@ -330,7 +330,7 @@ func newNodepingHealthTester(params map[string]interface{}, htp *HealthTestParam
 		token = typeutil.ToString(v)
 	}
 	// as we can only detect down nodes, not all nodes, we should assume the default is health
-	htp.healthyInitially = true
+	htp.HealthyInitially = true
 	htp.global = true
 	return &NodepingHealthTester{token: token}
 }

@@ -185,7 +185,7 @@ func setupZoneData(data map[string]interface{}, zone *Zone) {
 				label.Ttl = typeutil.ToInt(rdata)
 				continue
 			case "health":
-				zone.addHealthReference(label, rdata)
+				zone.newHealthTest(label, rdata)
 				continue
 			}
 
@@ -237,16 +237,6 @@ func setupZoneData(data map[string]interface{}, zone *Zone) {
 				h.Class = dns.ClassINET
 				h.Rrtype = dnsType
 
-				{
-					// allow for individual health test name overrides
-					if rec, ok := records[rType][i].(map[string]interface{}); ok {
-						if h, ok := rec["health"].(string); ok {
-							record.Test = h
-						}
-
-					}
-				}
-
 				switch len(label.Label) {
 				case 0:
 					h.Name = zone.Origin + "."
@@ -289,11 +279,6 @@ func setupZoneData(data map[string]interface{}, zone *Zone) {
 						if w, ok := r["weight"]; ok {
 							record.Weight = typeutil.ToInt(w)
 						}
-
-						if h, ok := r["health"]; ok {
-							record.Test = typeutil.ToString(h)
-						}
-
 					}
 
 					switch dnsType {
@@ -377,10 +362,6 @@ func setupZoneData(data map[string]interface{}, zone *Zone) {
 
 						if w, ok := r["weight"]; ok {
 							weight = typeutil.ToInt(w)
-						}
-
-						if h, ok := r["health"]; ok {
-							record.Test = typeutil.ToString(h)
 						}
 					}
 					if !dns.IsFqdn(target) {
