@@ -5,6 +5,27 @@ import (
 )
 
 var RegionGroups = map[string]string{
+
+	// Canada West
+	"ca-bc": "ca-west",
+	"ca-ab": "ca-west",
+	"ca-yt": "ca-west",
+
+	// Canada Central
+	"ca-sk": "ca-central",
+	"ca-mb": "ca-central",
+	"ca-nu": "ca-central",
+
+	// Canada East
+	"ca-nb": "ca-east",
+	"ca-nl": "ca-east",
+	"ca-nt": "ca-east",
+	"ca-ns": "ca-east",
+	"ca-pe": "ca-east",
+	"ca-qc": "ca-east",
+	"ca-on": "ca-east",
+
+	// US West
 	"us-ak": "us-west",
 	"us-az": "us-west",
 	"us-ca": "us-west",
@@ -19,6 +40,7 @@ var RegionGroups = map[string]string{
 	"us-wa": "us-west",
 	"us-wy": "us-west",
 
+	// US Central
 	"us-ar": "us-central",
 	"us-ia": "us-central",
 	"us-il": "us-central",
@@ -34,6 +56,7 @@ var RegionGroups = map[string]string{
 	"us-tx": "us-central",
 	"us-wi": "us-central",
 
+	// US East
 	"us-al": "us-east",
 	"us-ct": "us-east",
 	"us-dc": "us-east",
